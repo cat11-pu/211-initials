@@ -2,5 +2,12 @@
 import { firstLetter } from "./letter.js";
 
 export function initialsOf(words) {
-  return { initials: "", letters: [], length: 0 };
+  const letters = [];
+  let initials = "";
+  for (const word of words) {
+    const letter = firstLetter(word);
+    letters.push(letter);
+    initials += letter;
+  }
+  return { initials, letters, length: letters.length };
 }
